@@ -1,10 +1,7 @@
 def create_phone_book_json(filename):
     number_list = []
-    entry = {
-        'Anna Kowalska': 600000000,
-        'Marta Nowak': 500000000,
-        'Marcin Grabski': 501000000
-    }
+    entry = {'imie': 'Marta Nowak', 'numer': 500000000,
+             'imie': 'Adam Kowalski', 'numer': 543567567}
 
     number_list.append(entry)
     number_list_json = json.dumps(number_list)
@@ -29,8 +26,6 @@ def new_entry(list):
 
         if user_input == 'y':
             new_entry_name = input('Podaj imię: ')
-            new_entry = {
-            }
 
             while True:
                 try:
@@ -40,7 +35,7 @@ def new_entry(list):
                     continue
                 break
 
-            new_entry[new_entry_name] = new_entry_number
+            new_entry = {'imie': new_entry_name, 'numer': new_entry_number}
             list.append(new_entry)
 
         if user_input == 'n':
