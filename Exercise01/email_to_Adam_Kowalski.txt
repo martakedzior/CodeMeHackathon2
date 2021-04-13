@@ -1,0 +1,4 @@
+"Hi Adam Kowalski from class 3A,\n\nThis is a reminder that you have 3 tasks left to \
+submit before you can graduate. You're current grade is 4 and can increase \
+to 5 if you submit all assignments before the due date that falls on 30 June 2021.\n\n"
+
