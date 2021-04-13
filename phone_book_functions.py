@@ -1,3 +1,13 @@
+def save_file(filename, content):
+    try:
+        with open(filename, 'w', encoding='UTF-8') as file:
+            file.write(content)
+    except FileExistsError:
+        return 'not saved, file already exist'
+
+    return 'file successfully saved'
+
+
 def create_phone_book_json(filename):
     number_list = []
     entry = {'imie': 'Marta Nowak', 'numer': 500000000,
@@ -9,18 +19,7 @@ def create_phone_book_json(filename):
     save_file(filename, number_list_json)
 
 
-def save_file(filename, content):
-    try:
-        with open(filename, 'w', encoding='UTF-8') as file:
-            file.write(content)
-    except FileExistsError:
-        return 'not saved, file already exist'
-
-    return 'file successfully saved'
-
-
-def new_entry(list):
-
+def new_entry(phone_book_list):
     while True:
         user_input = input('Czy chcesz podać nowe dane do książki numerów? y/n: ')
 
@@ -36,10 +35,9 @@ def new_entry(list):
                 break
 
             new_entry = {'imie': new_entry_name, 'numer': new_entry_number}
-            list.append(new_entry)
+            phone_book_list.append(new_entry)
 
         if user_input == 'n':
-
             return
 
         else:
